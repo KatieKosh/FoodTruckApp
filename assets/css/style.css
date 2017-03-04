@@ -1,0 +1,95 @@
+
+body {
+background-color: grey;
+border: 30px solid black;
+background-image: url("tileable_wood_texture.img");
+}
+
+h1 {
+font-weight: bolder;
+
+}
+
+
+.container {
+
+font-family: 'Shadows Into Light', cursive;
+background-color: grey;
+}
+
+
+
+
+#foodTruckImg {
+
+
+margin-top: 100px;
+margin-left: 90px;
+}
+
+
+.container-foodTruck {
+
+border-bottom: 5px solid black;
+position: center;
+/*background-color: url("tileable_wood_texture.img");*/
+}
+
+.jumbotron {
+
+background-color: grey;
+border-bottom: 30px solid black;
+/*border-bottom: 5px solid black;*/
+}
+
+#map  {
+border-bottom: 15px solid black;
+margin-bottom: 60px;
+
+}
+
+
+p {
+padding-top: 30px;
+font-family: 'Shadows Into Light', cursive;
+font-size: 40px;
+text-align: center;
+}
+
+.form-group {
+  background-color: grey;
+  font-weight: bold;
+
+}
+
+input {
+font-weight: bold;
+}
+
+
+label {
+font-weight: bold;
+font-size: 20px;
+}
+
+#exampleInputEmail1 {
+
+background-color: #eeeeee;
+
+}
+
+#foodtruckEmail {
+  background-color: #eeeeee;
+}
+
+
+#reviewTextarea  {
+  background-color: #eeeeee;
+}
+
+
+footer {
+background-color:  black;
+font: white;
+font-family: 'Shadows Into Light', cursive;
+}
