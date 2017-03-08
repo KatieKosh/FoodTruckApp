@@ -35,18 +35,6 @@ background-image: url("../../image/lunchBoxWood.jpeg");
 background-size:  cover;
 }
 
-#button {
-font-weight: bold;
-font-size: 40px;
-display: block;
-position: absolute;
-margin-top: -7px;
-margin-left: 1300px;
-
-}
-
-
-
 #title {
 
 border-top: 3px solid white;
@@ -93,7 +81,7 @@ font-family: 'Shadows Into Light', cursive;
   	                 0 6px 0 hsl(174,5%,62%),
   	                 0 7px 0 hsl(174,5%,61%),
   	                 0 8px 0 hsl(174,5%,60%),
-
+  	                 
   	                 0 0 5px rgba(0,0,0,.05),
   	                0 1px 3px rgba(0,0,0,.2),
   	                0 3px 5px rgba(0,0,0,.2),
