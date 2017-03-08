@@ -35,18 +35,6 @@ background-image: url("../../image/lunchBoxWood.jpeg");
 background-size:  cover;
 }
 
-#button {
-font-weight: bold;
-font-size: 40px;
-display: block;
-position: absolute;
-margin-top: -7px;
-margin-left: 1300px;
-
-}
-
-
-
 #title {
 
 border-top: 3px solid white;
