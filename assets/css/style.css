@@ -31,7 +31,7 @@ body {
 
 
 border: 30px solid black;
-background-image: url("/Users/kathrynkoshinski/ut-coding-bootcamp/FoodTruckApp/lunchBoxWood.img");
+background-image: url("../../image/lunchBoxWood.jpeg");
 background-size:  cover;
 }
 
@@ -121,7 +121,7 @@ position: center;
 }
 
 .jumbotron {
-background-image: url("/Users/kathrynkoshinski/ut-coding-bootcamp/FoodTruckApp/little_pluses/background.png")!important;
+background-image: url("../../little_pluses/background.png")!important;
 border-radius: 25px;
 margin-top: 100px;
 /*border-top: 50px solid black;*/
@@ -183,7 +183,7 @@ background-color: #eeeeee;
 #footer {
 border-top:10px solid black;
 height: 60px;
-background-image: url("FoodTruckApp/little_pluses/little_pluses.png");
+background-image: url("../../little_pluses/little_pluses.png");
 font-family: 'Shadows Into Light', cursive;
 background-color: black;
 }
