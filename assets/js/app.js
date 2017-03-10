@@ -29,13 +29,13 @@
   		newReview.text(review);
 
   		newDiv.append(newName, newLoc, newFood, newReview);
-  		$(?).append(newDiv);
+  		$("#ftAdded").append(newDiv);
   	}
   }, function(err) {
   	console.log("The read failed: " + err.code;
   });
 
-$(?).on("click", function(ev) {
+$().on("click", function(ev) {
 	ev.preventDefault();
 	var ftName = $("#").val().trim();
   var location = $("#").val().trim();
