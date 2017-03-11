@@ -125,9 +125,10 @@ margin-bottom: 25px;
 }
 
 #map  {
-border-bottom: 3px solid black;
-margin-bottom: 60px;
-
+	/*border-bottom: 3px solid black;
+	margin-bottom: 60px;*/
+	height: 500px;
+	width: 900px;
 }
 
 
@@ -177,7 +178,3 @@ background-color: black;
 }
 
 
-#map {
-			height: 500px;
-			width: 900px;
-		}
