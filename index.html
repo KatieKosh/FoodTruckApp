@@ -58,6 +58,9 @@
 	</div>
 
 
+
+
+
 	<div class="row">
 		<div class="col-md-12">
 			<button onclick="getLocation()">Find My Location</button>
@@ -68,23 +71,51 @@
 		</div>
 	</div>
 
-	<div class="row">
+	<!-- <div class="row">
 		<div class="col-md-12">
 			<div class="text-center">
 			</div>
 		</div>
 	</div>
+ -->
 
 
 
-	<div class="row">
-		<div class="col-md-6">
-			<!-- <div id =guitarPic>
-				<img src="image/guitar.jpg" style="height: 125px; width: 115px; border:6px solid white;">
-			</div> -->
-		</div>
-	
-		<div class="col-md-6">
+	<div class="col-md-6">
+  <div id = "newFTadditions" style="background-image: url(" little_pluses.png ");">
+  <div class="row">
+<div id = "titles"</div>
+<div id="name">Name</div>
+<div id="location">Location</div>
+<div id="review">Type</div>
+<div id="type">Review</div>
+<div id="reviewBox">
+
+</div>
+</div>
+  </div>
+</div>
+
+
+
+
+    <div class="col-md-6">
+
+      <div id="addTruck">
+        <div class="panel panel-default">
+          <div class="panel-heading">Form</div>
+          <div class="panel-body">
+            <vue-form-generator :schema="schema" :model="model"></vue-form-generator>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+    <!-- <div class="col-md-6">
 
 			<div id="addTruck">
 				<div class="panel panel-default">
@@ -93,7 +124,7 @@
 						<vue-form-generator :schema="schema" :model="model"></vue-form-generator>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 
 			<!-- <form id="addTruck" v-on:submit.prevent="onSubmit">
@@ -147,7 +178,7 @@
 	<div id="texas">
 	Texas
 	</div>  -->
-	
+
 	<!-- Must have code for food truck icon-->
 	Icons made by <a href="http://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
 	</div>
@@ -157,7 +188,7 @@
 <script async defer
      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCVNNE9FZK9fjTgF7DMV1PHjKPwQEt0LxU&callback=initMap">
 </script>
-<script type="text/javascript" src="assets/js/map.js"></script> 
+<script type="text/javascript" src="assets/js/map.js"></script>
 </body>
 
 </html>

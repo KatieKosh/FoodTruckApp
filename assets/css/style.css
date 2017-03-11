@@ -18,7 +18,56 @@ display:  inline-block;
 
 }
 
+#name {
+	font-size: 35px;
+padding-bottom: 20px;
+border-bottom: 3px solid black;
 
+}
+
+#location {
+padding-top: 30px;
+	font-size: 35px;
+border-bottom: 3px solid black;
+
+}
+
+#type {
+	padding-top: 30px;
+		font-size: 35px;
+	border-bottom: 3px solid black;
+	padding-bottom: 20px;
+}
+
+#reviewBox {
+height: 130px;
+width:  500px;
+
+background-color: white;
+}
+
+#review {
+	padding-top: 30px;
+	border-bottom: 3px solid black;
+	font-size: 35px;
+	padding-bottom: 10px;
+padding-top: 30px;
+}
+
+#titles {
+	padding: 20px;
+
+}
+
+
+#newFTadditions {
+	background-color: grey;
+	border: 10px solid white;
+	margin-bottom: 25px;
+	height: 600px;
+	/*background-image: url("../../little_pluses.png");*/
+
+}
 
 
 #foodTruckImg {
@@ -81,7 +130,7 @@ font-family: 'Shadows Into Light', cursive;
   	                 0 6px 0 hsl(174,5%,62%),
   	                 0 7px 0 hsl(174,5%,61%),
   	                 0 8px 0 hsl(174,5%,60%),
-  	                 
+
   	                 0 0 5px rgba(0,0,0,.05),
   	                0 1px 3px rgba(0,0,0,.2),
   	                0 3px 5px rgba(0,0,0,.2),
