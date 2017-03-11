@@ -75,9 +75,10 @@ var vm = new Vue({
     },
 	data: {
 		model: {
-			name: "Food Truck Name",
-			location: "Address",
-			review: "Add your review",
+			name: "",
+			location: "",
+      parking: [],
+			review: "",
 			foodType: [],
 		},
 		schema: {
@@ -104,6 +105,12 @@ var vm = new Vue({
 				max: 500,
 				rows: 3,
 			},{
+        type: "checklist",
+        label: "Parking",
+        model: "parking",
+        listbox: true,
+        values: ["Free Onsite", "Paid Onsite", "Free Street", "Paid Street", "None"]
+      },{
 				type: "radios",
 				label: "Food Type",
 				model: "foodType",
@@ -116,26 +123,42 @@ var vm = new Vue({
 					event.preventDefault();
 					var ftName = vm.$data.model.name;
 				  var location = vm.$data.model.location;
+          var parking = vm.$data.model.parking;
 				 	var foodType = vm.$data.model.foodType;
 				  var review = vm.$data.model.review;
+
+          var nameRef = firebase.database().ref().child('name');
+          var usersRef = nameRef.child("Test Name")
+          var existName = usersRef.isEqual(nameRef);
+          console.log(nameRef);
+          // var existName = nameRef.isEqual(rootRef.ref());
+          // console.log(existName);
 				  
-				  
-				  if ((database.child("name").exists()) && (database.child("location").exists())) {
-				  	return error;
-				  } else {
-				  database.ref().push({
-				  	name: ftName,
-				  	location: location,
-				  	foodType: foodType,
-				  	review: review,
-				  	time: Date.now()
-				  });
-				}
-				}
-			}]
-		}
-	}
+				// if ((ftName.isEqual(database.ref().child("name"))) && (location.isEqual(database.ref().child("location")))) {
+				//   	return alert("That exists");
+				//   } else {
+				  // database.ref().push({
+				  // 	name: ftName,
+				  // 	location: location,
+          //  parking: parking,
+				  // 	foodType: foodType,
+				  // 	review: review,
+				  // 	time: Date.now()
+				  // });
+				// }
+          vm.$data.model = {
+          name: "",
+          location: "",
+          parking: [],
+          review: "",
+          foodType: [],
+          }
+			  }
+		  }]
+    }
+  }
 });
+
 
 var vueName = vm.$data.model.name;
 var vueLoc = vm.$data.model.location;
