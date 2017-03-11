@@ -12,6 +12,9 @@
 
   var database = firebase.database();
 
+  function log(shap) {console.log(snap.val());}
+  function error(errObj) {console.log("Errors Handled: " + errObj);}
+  database.ref().on("value", log);
   database.ref().on("child_added", function(snapshot) {
   	if ((snapshot.child("name").exists()) && (snapshot.child("location").exists())) {
   		var ftName = snapshot.val().name;
@@ -127,10 +130,12 @@ var vm = new Vue({
 				 	var foodType = vm.$data.model.foodType;
 				  var review = vm.$data.model.review;
 
-          var nameRef = firebase.database().ref().child('name');
-          var usersRef = nameRef.child("Test Name")
-          var existName = usersRef.isEqual(nameRef);
-          console.log(nameRef);
+          
+          
+
+          //var usersRef = nameRef.child("Test Name");
+          //var existName = usersRef.isEqual(nameRef);
+          // console.log(nameRef);
           // var existName = nameRef.isEqual(rootRef.ref());
           // console.log(existName);
 				  
