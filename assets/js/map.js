@@ -17,7 +17,6 @@
   		map.setCenter(pos);
 		};
 		function initMap() {
-						//Bernotti by KLO
 						var styles = 
 						[
 						    {
