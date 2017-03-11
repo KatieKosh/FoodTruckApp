@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js">
-
+		<script src="https://unpkg.com/vue"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
 	<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"> -->
@@ -17,7 +17,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/style.css">
-
+	<!-- <script>
+	import VueFormGenerator from "assets/js/vue-form-generator/dist/vfg-core.js";
+  import "assets/js/vue-form-generator/dist/vfg-core.css";
+	</script> -->
 </head>
 
 <body>
@@ -80,50 +83,51 @@
 				<img src="image/guitar.jpg" style="height: 125px; width: 115px; border:6px solid white;">
 			</div> -->
 		</div>
-
+	
 		<div class="col-md-6">
-			<form>
+
+			<div id="addTruck">
+				<div class="panel panel-default">
+					<div class="panel-heading">Form</div>
+					<div class="panel-body">
+						<vue-form-generator :schema="schema" :model="model"></vue-form-generator>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- <form id="addTruck" v-on:submit.prevent="onSubmit">
 				<div class="form-group">
 					<p>If you've found a Food Truck to recommend in Austin, please share. Spread the Love!</p>
 
-					<label for="exampleInputEmail1">Name of the Food Truck</label>
-					<input type="text" class="form-control" id="inputFTName">
-					<small id="emailHelp" class="form-text text-muted"></small>
+					<label for="name">Name of the Food Truck</label>
+					<input v-model="name" placeholder="Food Truck Name" id="ftName" class="form-control">
 				</div>
 				<div class="form-group">
-					<label for="exampleInputPassword1">Location including street name and number.</label>
-					<input type="password" class="form-control" id="foodtruckEmail">
+					<label for="location">Location including street name and number.</label>
+					<input v-model="loc" placeholder="123 S Congress Ave Austin, TX" id="location" class="form-control">
 				</div>
 
 				<div class="form-group">
 					<label for="exampleTextarea">Your Review?</label>
-					<textarea class="form-control" id="reviewTextarea" rows="3"></textarea>
+					<textarea v-model="review" id="review" placeholder="Add your review" class="form-control" rows="3"></textarea>
 				</div>
-				<div class="form-group">
-					<label for="exampleInputFile" style="bold">Upload Pics</label>
-					<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-					<small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+				<div id="foodType" class="radio">
+						<input type="radio" id="one" value="Tacos" v-model="picked">
+						<label for="one">Tacos</label>
+						<br>
+						<input type="radio" id="two" value="Burgers" v-model="picked">
+						<label for="two">Burgers</label>
+						<br>
+						<input type="radio" id="three" value="Cupcakes" v-model="picked">
+						<label for="three">Cupcakes</label>
+						<br>
+						<input type="radio" id="four" value="Other" v-model="picked">
+						<label for="four">Other</label>
 				</div>
-				<fieldset class="form-group">
-					<legend>Food Type</legend>
-						<div class="form-check">
-							<label class="form-check-label">
-								<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>Breakfast</label>
-						</div>
-						<div class="form-check">
-							<label class="form-check-label">
-							<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-							Pizza </label>
-						</div>
-						<div class="form-check disabled">
-							<label class="">
-							<input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
-							Burgers</label>
-						</div>
-					</div>
-				</fieldset>
+				<button type="submit" class="btn btn-lg btn-primary" v-on:click="submit">Submit</button>
 
-			</form>
+			</form> -->
 		</div>
 	</div>
 
@@ -147,6 +151,7 @@
 	</div>
 </footer>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
 </body>
 
 </html>
