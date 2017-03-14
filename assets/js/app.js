@@ -12,7 +12,7 @@
 
   var database = firebase.database();
 
-  function log(shap) {console.log(snap.val());}
+  function log(snap) {console.log(snap.val());}
   function error(errObj) {console.log("Errors Handled: " + errObj);}
   database.ref().on("value", log);
   database.ref().on("child_added", function(snapshot) {
@@ -93,6 +93,7 @@ var vm = new Vue({
 				featured: true,
 				required: true,
 				disabled: false,
+        validator: validators.string
 			},{
 				type: "input",
 				inputType: "text",
@@ -100,6 +101,7 @@ var vm = new Vue({
 				model: "location",
 				required: true,
 				hint: "123 Main St. Austin, TX 78704"
+        validator: validators.string
 			}, {
 				type: "textArea",
 				label: "Review",
@@ -123,7 +125,7 @@ var vm = new Vue({
 				type: "submit",
 				buttonText: "Submit Your Truck",
 				onSubmit: function(e) {
-					event.preventDefault();
+					e.preventDefault();
 					var ftName = vm.$data.model.name;
 				  var location = vm.$data.model.location;
           var parking = vm.$data.model.parking;
@@ -131,26 +133,27 @@ var vm = new Vue({
 				  var review = vm.$data.model.review;
 
           
-          
+          var nameRef = database.ref("users").orderByChild("time").key;
+            console.log(nameRef);
 
           //var usersRef = nameRef.child("Test Name");
           //var existName = usersRef.isEqual(nameRef);
-          // console.log(nameRef);
+          // 
           // var existName = nameRef.isEqual(rootRef.ref());
           // console.log(existName);
 				  
 				// if ((ftName.isEqual(database.ref().child("name"))) && (location.isEqual(database.ref().child("location")))) {
 				//   	return alert("That exists");
 				//   } else {
-				  // database.ref().push({
-				  // 	name: ftName,
-				  // 	location: location,
-          //  parking: parking,
-				  // 	foodType: foodType,
-				  // 	review: review,
-				  // 	time: Date.now()
-				  // });
-				// }
+				  database.ref().push({
+				  	name: ftName,
+				  	location: location,
+           parking: parking,
+				  	foodType: foodType,
+				  	review: review,
+				  	dateAdded: firebase.database.ServerValue.TIMESTAMP
+				  });
+				
           vm.$data.model = {
           name: "",
           location: "",
