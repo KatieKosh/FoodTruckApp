@@ -15,7 +15,7 @@
   function log(snap) {console.log(snap.val());}
   function error(errObj) {console.log("Errors Handled: " + errObj);}
   database.ref().on("value", log);
-  database.ref().on("child_added", function(snapshot) {
+  database.ref().limitToLast(3).on("child_added", function(snapshot) {
   	if ((snapshot.child("name").exists()) && (snapshot.child("location").exists())) {
   		var ftName = snapshot.val().name;
   		var location = snapshot.val().location;
@@ -43,9 +43,8 @@
   		newLoc.text("Location: " + location);
   		newFood.text("Food Type: " + foodType);
   		newReview.text("Review: " + review);
-      parkingHead.append(newPark);
 
-  		newDiv.append(newName, newLoc, newFood, newReview, parkingHead);
+  		newDiv.append(newName, newLoc, newFood, newReview, parkingHead, newPark);
   		$("#ftAdded").append(newDiv);
   	}
   }, function(err) {
@@ -137,7 +136,7 @@ var vm = new Vue({
 				type: "submit",
 				buttonText: "Submit Your Truck",
 				onSubmit: function(e) {
-					//e.preventDefault();
+					e.preventDefault();
 					var ftName = vm.$data.model.name;
 				  var location = vm.$data.model.location;
           var parking = vm.$data.model.parking;

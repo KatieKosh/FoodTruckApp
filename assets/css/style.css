@@ -60,15 +60,7 @@ padding-top: 30px;
 }
 
 
-#newFTadditions {
-	margin-top: 150px;
-	background-color: grey;
-	border: 10px solid white;
-	margin-bottom: 25px;
-	height: 600px;
-	/*background-image: url("../../little_pluses.png");*/
 
-}
 
 
 #foodTruckImg {
@@ -227,6 +219,15 @@ font-family: 'Shadows Into Light', cursive;
 background-color: black;
 }
 
+#newFTadditions {
+	margin-top:0px;
+	background-color: lightgrey;
+	border: 10px solid black;
+	margin-bottom: 25px;
+	height: auto;
+	/*background-image: url("../../little_pluses.png");*/
+
+}
 
 #ftAdded h1 {
 	padding-left:20px;
