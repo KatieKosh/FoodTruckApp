@@ -247,7 +247,6 @@ background-color: black;
 }
 #ftAdded ul li {
 	list-style-type: none;
-	display: inline;
 }
 #ftAdded li {
 	font-family: 'Shadows Into Light', cursive;
@@ -255,5 +254,4 @@ background-color: black;
 	line-height: 22px;
 	text-align: left;
 	font-weight: normal;
-	display: inline;
 }

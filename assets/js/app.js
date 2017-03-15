@@ -45,7 +45,7 @@
   		newReview.text("Review: " + review);
 
   		newDiv.append(newName, newLoc, newFood, newReview, parkingHead, newPark);
-  		$("#ftAdded").append(newDiv);
+  		$("#ftAdded").prepend(newDiv);
   	}
   }, function(err) {
   	console.log("The read failed: " + err.code);
@@ -173,6 +173,8 @@ var vm = new Vue({
           review: "",
           foodType: [],
           }
+
+          //window.location.reload();
 			  }
 		  }]
     }
