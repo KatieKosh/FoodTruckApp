@@ -226,3 +226,33 @@ background-image: url("../../little_pluses/little_pluses.png");
 font-family: 'Shadows Into Light', cursive;
 background-color: black;
 }
+
+
+#ftAdded h1 {
+	padding-left:20px;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 36px;
+	text-align: left;
+	font-weight: bold;
+}
+#ftAdded p {
+	padding-left:30px;
+	padding-top:0px;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: left;
+	font-weight: normal;
+}
+#ftAdded ul li {
+	list-style-type: none;
+	display: inline;
+}
+#ftAdded li {
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: left;
+	font-weight: normal;
+	display: inline;
+}

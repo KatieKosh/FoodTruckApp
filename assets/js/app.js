@@ -21,19 +21,31 @@
   		var location = snapshot.val().location;
   		var foodType = snapshot.val().foodType;
   		var review = snapshot.val().review;
+      var parking = snapshot.val().parking;
 
   		var newDiv = $("<div>");
   		var newName = $("<h1>");
   		var newLoc = $("<p>");
   		var newFood = $("<p>");
   		var newReview = $("<p>");
+      var parkingHead = $("<p>Parking:</p>")
+      var newPark = $("<ul>");
+      
+
+      for (var i = 0; i < parking.length; i++) {
+        var newParkLi = $("<li>");
+        var parkVal = parking[i];
+        newParkLi.text(parkVal);
+        newPark.append(newParkLi);
+      }
 
   		newName.text(ftName);
-  		newLoc.text(location);
-  		newFood.text(foodType);
-  		newReview.text(review);
+  		newLoc.text("Location: " + location);
+  		newFood.text("Food Type: " + foodType);
+  		newReview.text("Review: " + review);
+      parkingHead.append(newPark);
 
-  		newDiv.append(newName, newLoc, newFood, newReview);
+  		newDiv.append(newName, newLoc, newFood, newReview, parkingHead);
   		$("#ftAdded").append(newDiv);
   	}
   }, function(err) {
