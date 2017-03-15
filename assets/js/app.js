@@ -155,13 +155,13 @@ var vm = new Vue({
 				  	dateAdded: firebase.database.ServerValue.TIMESTAMP
 				  });
 				
-          // vm.$data.model = {
-          // name: "",
-          // location: "",
-          // parking: [],
-          // review: "",
-          // foodType: [],
-          // }
+          vm.$data.model = {
+          name: "",
+          location: "",
+          parking: [],
+          review: "",
+          foodType: [],
+          }
 			  }
 		  }]
     }
