@@ -61,6 +61,7 @@ padding-top: 30px;
 
 
 #newFTadditions {
+	margin-top: 150px;
 	background-color: grey;
 	border: 10px solid white;
 	margin-bottom: 25px;
@@ -225,5 +226,3 @@ background-image: url("../../little_pluses/little_pluses.png");
 font-family: 'Shadows Into Light', cursive;
 background-color: black;
 }
-
-
