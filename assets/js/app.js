@@ -12,25 +12,39 @@
 
   var database = firebase.database();
 
-  database.ref().on("child_added", function(snapshot) {
+  function log(snap) {console.log(snap.val());}
+  function error(errObj) {console.log("Errors Handled: " + errObj);}
+  database.ref().on("value", log);
+  database.ref().limitToLast(3).on("child_added", function(snapshot) {
   	if ((snapshot.child("name").exists()) && (snapshot.child("location").exists())) {
   		var ftName = snapshot.val().name;
   		var location = snapshot.val().location;
   		var foodType = snapshot.val().foodType;
   		var review = snapshot.val().review;
+      var parking = snapshot.val().parking;
 
   		var newDiv = $("<div>");
   		var newName = $("<h1>");
   		var newLoc = $("<p>");
   		var newFood = $("<p>");
   		var newReview = $("<p>");
+      var parkingHead = $("<p>Parking:</p>")
+      var newPark = $("<ul>");
+      
+
+      for (var i = 0; i < parking.length; i++) {
+        var newParkLi = $("<li>");
+        var parkVal = parking[i];
+        newParkLi.text(parkVal);
+        newPark.append(newParkLi);
+      }
 
   		newName.text(ftName);
-  		newLoc.text(location);
-  		newFood.text(foodType);
-  		newReview.text(review);
+  		newLoc.text("Location: " + location);
+  		newFood.text("Food Type: " + foodType);
+  		newReview.text("Review: " + review);
 
-  		newDiv.append(newName, newLoc, newFood, newReview);
+  		newDiv.append(newName, newLoc, newFood, newReview, parkingHead, newPark);
   		$("#ftAdded").append(newDiv);
   	}
   }, function(err) {
@@ -75,9 +89,10 @@ var vm = new Vue({
     },
 	data: {
 		model: {
-			name: "Food Truck Name",
-			location: "Address",
-			review: "Add your review",
+			name: "",
+			location: "",
+      parking: [],
+			review: "",
 			foodType: [],
 		},
 		schema: {
@@ -89,6 +104,7 @@ var vm = new Vue({
 				featured: true,
 				required: true,
 				disabled: false,
+        // validator: validators.string
 			},{
 				type: "input",
 				inputType: "text",
@@ -96,6 +112,7 @@ var vm = new Vue({
 				model: "location",
 				required: true,
 				hint: "123 Main St. Austin, TX 78704"
+        
 			}, {
 				type: "textArea",
 				label: "Review",
@@ -104,6 +121,12 @@ var vm = new Vue({
 				max: 500,
 				rows: 3,
 			},{
+        type: "checklist",
+        label: "Parking",
+        model: "parking",
+        listbox: true,
+        values: ["Free Onsite", "Paid Onsite", "Free Street", "Paid Street", "None"]
+      },{
 				type: "radios",
 				label: "Food Type",
 				model: "foodType",
@@ -113,29 +136,49 @@ var vm = new Vue({
 				type: "submit",
 				buttonText: "Submit Your Truck",
 				onSubmit: function(e) {
-					event.preventDefault();
+					e.preventDefault();
 					var ftName = vm.$data.model.name;
 				  var location = vm.$data.model.location;
+          var parking = vm.$data.model.parking;
 				 	var foodType = vm.$data.model.foodType;
 				  var review = vm.$data.model.review;
+
+          
+          // var nameRef = database.ref("users").orderByChild("time").key;
+          //   console.log(nameRef);
+
+          //var usersRef = nameRef.child("Test Name");
+          //var existName = usersRef.isEqual(nameRef);
+          // 
+          // var existName = nameRef.isEqual(rootRef.ref());
+          // console.log(existName);
 				  
-				  
-				  if ((database.child("name").exists()) && (database.child("location").exists())) {
-				  	return error;
-				  } else {
+				// if ((ftName.isEqual(database.ref().child("name"))) && (location.isEqual(database.ref().child("location")))) {
+				//   	return alert("That exists");
+				//   } else {
+
 				  database.ref().push({
 				  	name: ftName,
 				  	location: location,
+            parking: parking,
 				  	foodType: foodType,
 				  	review: review,
-				  	time: Date.now()
+				  	dateAdded: firebase.database.ServerValue.TIMESTAMP
 				  });
-				}
-				}
-			}]
-		}
-	}
+				
+          vm.$data.model = {
+          name: "",
+          location: "",
+          parking: [],
+          review: "",
+          foodType: [],
+          }
+			  }
+		  }]
+    }
+  }
 });
+
 
 var vueName = vm.$data.model.name;
 var vueLoc = vm.$data.model.location;

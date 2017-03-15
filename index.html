@@ -11,6 +11,7 @@
 		<script src="https://unpkg.com/vue"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+	
 	<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Optional theme -->
@@ -36,16 +37,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<!-- <div class="jumbotron" style="background-image: url('/Users/kathrynkoshinski/ut-coding-bootcamp/FoodTruckApp/image/little_pluses/background.png');"> -->
-
-
 				<div class="jumbotron" style="background-image:  url(" little_pluses.png ");">
-
 					<div class="border">
-
 						<div class="text-center">
-
-
 						<div id="title">Lunch Box</div>
 						<h4>(Supporting Local Business!)
 						<h2>Find Yo-Self A Food Truck!!</h2>
@@ -69,38 +63,17 @@
 			<div class="text-center">
 			</div>
 		</div>
-	</div>
+	</div>	
 
-	<!-- <div class="row">
-		<div class="col-md-12">
-			<div class="text-center">
-			</div>
+	<div class="row">
+		<div class="col-md-6">
+		  <div id = "newFTadditions" style="background-image:  url("little_pluses.png");">
+		  	<div class="row">
+					<div id ="ftAdded"></div>
+				</div>
+  		</div>
 		</div>
-	</div>
- -->
-
-
-
-	<div class="col-md-6">
-  <div id = "newFTadditions" style="background-image:  url("little_pluses.png");">
-  <div class="row">
-<div id = "titles"</div>
-<div id="name">Name</div>
-<div id="location">Location</div>
-<div id="review">Type</div>
-<div id="type">Review</div>
-<div id="reviewBox">
-
-</div>
-</div>
-  </div>
-</div>
-
-
-
-
-    <div class="col-md-6">
-
+		<div class="col-md-6">
       <div id="addTruck">
         <div class="panel panel-default">
           <div class="panel-heading">Form</div>
@@ -109,6 +82,17 @@
           </div>
         </div>
       </div>
+     </div>
+	</div>
+
+
+
+	
+
+
+
+
+    
 
 
 
@@ -159,7 +143,6 @@
 				<button type="submit" class="btn btn-lg btn-primary" v-on:click="submit">Submit</button>
 
 			</form> -->
-		</div>
 	</div>
 
 
@@ -189,6 +172,7 @@
      src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCVNNE9FZK9fjTgF7DMV1PHjKPwQEt0LxU&callback=initMap">
 </script>
 <script type="text/javascript" src="assets/js/map.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 
 </html>
