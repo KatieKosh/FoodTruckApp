@@ -93,7 +93,7 @@ var vm = new Vue({
 				featured: true,
 				required: true,
 				disabled: false,
-        validator: validators.string
+        // validator: validators.string
 			},{
 				type: "input",
 				inputType: "text",
@@ -101,7 +101,7 @@ var vm = new Vue({
 				model: "location",
 				required: true,
 				hint: "123 Main St. Austin, TX 78704"
-        validator: validators.string
+        
 			}, {
 				type: "textArea",
 				label: "Review",
@@ -125,7 +125,7 @@ var vm = new Vue({
 				type: "submit",
 				buttonText: "Submit Your Truck",
 				onSubmit: function(e) {
-					e.preventDefault();
+					//e.preventDefault();
 					var ftName = vm.$data.model.name;
 				  var location = vm.$data.model.location;
           var parking = vm.$data.model.parking;
@@ -133,8 +133,8 @@ var vm = new Vue({
 				  var review = vm.$data.model.review;
 
           
-          var nameRef = database.ref("users").orderByChild("time").key;
-            console.log(nameRef);
+          // var nameRef = database.ref("users").orderByChild("time").key;
+          //   console.log(nameRef);
 
           //var usersRef = nameRef.child("Test Name");
           //var existName = usersRef.isEqual(nameRef);
@@ -145,22 +145,23 @@ var vm = new Vue({
 				// if ((ftName.isEqual(database.ref().child("name"))) && (location.isEqual(database.ref().child("location")))) {
 				//   	return alert("That exists");
 				//   } else {
+
 				  database.ref().push({
 				  	name: ftName,
 				  	location: location,
-           parking: parking,
+            parking: parking,
 				  	foodType: foodType,
 				  	review: review,
 				  	dateAdded: firebase.database.ServerValue.TIMESTAMP
 				  });
 				
-          vm.$data.model = {
-          name: "",
-          location: "",
-          parking: [],
-          review: "",
-          foodType: [],
-          }
+          // vm.$data.model = {
+          // name: "",
+          // location: "",
+          // parking: [],
+          // review: "",
+          // foodType: [],
+          // }
 			  }
 		  }]
     }
