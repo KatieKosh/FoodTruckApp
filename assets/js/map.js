@@ -3,7 +3,7 @@
 		function getLocation() {
   		if (navigator.geolocation) {
       	navigator.geolocation.getCurrentPosition(showPosition);
-  			} else { 
+  			} else {
       	map.innerHTML = "Geolocation is not supported by this browser.";
   		}
 		};
@@ -17,7 +17,7 @@
   		map.setCenter(pos);
 		};
 		function initMap() {
-						var styles = 
+						var styles =
 						[
 						    {
 						        "featureType": "administrative",
@@ -299,7 +299,7 @@
 
 			map = new google.maps.Map(document.getElementById('map'), {
 				center: {lat: 30.274301, lng: -97.739600},
-				zoom: 14,
+				zoom: 25,
 				styles: styles,
         		mapTypeControl: true,
         		zoomControl: true,
@@ -314,7 +314,7 @@
 			//	lng: position.coords.longitude
 			//};
 
-			
+
 			var infowindow = new google.maps.InfoWindow({
 				content: 'Hello Austin!'
 				//map:map
@@ -328,9 +328,62 @@
   			var bikeLayer = new google.maps.BicyclingLayer();
   				bikeLayer.setMap(map);
 
-  		
 
-			
 
-	
+//Stuff I added 3/14
+//Gourdough's Big Fat Donuts
+					var firstFoodTruck = new google.maps.LatLng(30.249512, -97.754808);
+					var secondFoodTruck = new google.maps.LatLng(30.236757, -97.762788); //Gourdough's Big Fat Dounut's
+					var thirdFoodTruck = new google.maps.LatLng(30.315275, -97.716641); //the vegan nom
+					var fourthFoodTruck = new google.maps.LatLng(30.267194, -97.745590); //Surf n turf
+					var fifthFoodTruck = new google.maps.LatLng(30.260685, -97.738358); //Tommy want Wingy
+
+					var mapOptions = {
+					  zoom: 15,
+					  center: firstFoodTruck
+					}
+					var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+					var marker = new google.maps.Marker({
+					    position: firstFoodTruck,
+					    title:"Hello World!",
+							label: "1"
+					});
+
+
+					var secondMarker = new google.maps.Marker({
+							position:  secondFoodTruck,
+							 title:"secondFoodTruck",
+							 label: "2"
+					});
+
+					// To add the marker to the map, call setMap();
+
+					var thirdMarker = new google.maps.Marker({
+							position:  thirdFoodTruck,
+							 title:"thirdFoodTruck",
+							 label: "3"
+					});
+
+
+					var fourthMarker = new google.maps.Marker({
+							position:  fourthFoodTruck,
+							 title:"fourthFoodTruck",
+							 label: "4"
+					});
+
+					var fifthMarker = new google.maps.Marker({
+							position:  fifthFoodTruck,
+							 title:"fifthFoodTruck"
+					});
+
+
+					marker.setMap(map);
+					secondMarker.setMap(map);
+					thirdMarker.setMap(map);
+					fourthMarker.setMap(map);
+					fifthMarker.setMap(map);
+
+
+
 	};//end initMap
