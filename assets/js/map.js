@@ -344,6 +344,9 @@
 					}
 					var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+
+
+
 					var marker = new google.maps.Marker({
 					    position: firstFoodTruck,
 					    title:"Hello World!",
@@ -352,7 +355,7 @@
 
 
 
-							function addInfoWindow(marker, content) {
+		function addInfoWindowOne(marker, content) {
     var infoWindow = new google.maps.InfoWindow({
         content: "Torchy's Tacos"
 
@@ -361,9 +364,10 @@
         infoWindow.open(map, marker);
     });
 };
-addInfoWindow(marker);
+				addInfoWindowOne(marker);
 
 
+/////////////////////////////////////////////
 					var secondMarker = new google.maps.Marker({
 							position:  secondFoodTruck,
 							 title:"secondFoodTruck",
@@ -378,19 +382,50 @@ addInfoWindow(marker);
 							 label: "3"
 					});
 
+					function addInfoWindowThree(thirdMarker, content) {
+					var infoWindow = new google.maps.InfoWindow({
+							content: "The Vegan Nom"
+
+					});
+					google.maps.event.addListener(thirdMarker, 'click', function() {
+							infoWindow.open(map, thirdMarker);
+					});
+					};
+							addInfoWindowThree(thirdMarker);
+
+
+
 					var fourthMarker = new google.maps.Marker({
 							position:  fourthFoodTruck,
 							 title:"fourthFoodTruck",
 							 label: "4"
 					});
+					function addInfoWindowFour(fourthMarker, content) {
+					var infoWindow = new google.maps.InfoWindow({
+							content: "Surf n Turf"
 
-					var fifthMarker = new google.maps.Marker({
+					});
+					google.maps.event.addListener(fourthMarker, 'click', function() {
+							infoWindow.open(map, fourthMarker);
+					});
+					};
+					addInfoWindowFour(fourthMarker);
+
+						var fifthMarker = new google.maps.Marker({
 							position:  fifthFoodTruck,
 							 title:"fifthFoodTruck",
 							 label: "5"
 						 });
+						 function addInfoWindowFive(fifthMarker, content) {
+						 var infoWindow = new google.maps.InfoWindow({
+						 		content: "Tommy Want Wingy"
 
-
+						 });
+						 google.maps.event.addListener(fifthMarker, 'click', function() {
+						 		infoWindow.open(map, fifthMarker);
+						 });
+						 };
+						 addInfoWindowFive(fifthMarker);
 
 
 					marker.setMap(map);
