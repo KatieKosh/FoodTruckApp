@@ -1,26 +1,9 @@
-# FoodTruckApp
-* Project Goal:
+# Lunch Box
+*How do you find something that is usually moving around daily?*
 
-   * Build Something Awesome
+We made an inviting application to map food trucks in Austin and allow users to add food trucks they find along the way.
 
- * Requirements:
+Utilizing bootstrap to create the UI, we integrated the Google Maps API to create the map on the page with pins, and get the users current location. We used OpenWeather API to display the current and future weather information around lunch time. Finally, we used Firebase to store the food truck information. We experiemented with Vue.JS and used the [Vue Contact Form Genorator](https://icebob.gitbooks.io/vueformgenerator/content/) to get and upload user input.
 
-   * Must uses at least two APIs
-
-   * Must use AJAX to pull data
-
-   * Must utilize at least one new library or technology that we haven’t discussed
-
-   * Must have a polished frontend / UI
-
-   * Must meet good quality coding standards (indentation, scoping, naming)
-
-   * Must NOT use alerts, confirms, or prompts (look into modals!)
-
-   * Must have some sort of repeating element (table, columns, etc)
-
-   * Must use Bootstrap or Alternative CSS Framework
-
-   * Must be Deployed (Heroku or Firebase)
-
-   * Must have User Input Validation
+### Future Considerations
+We'd like to make the app more mobile friendly, and integrate the Yelp API to display more information about food trucks and gather more reviews.
