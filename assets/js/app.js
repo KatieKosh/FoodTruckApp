@@ -187,3 +187,47 @@ var vueLoc = vm.$data.model.location;
 var vueReview = vm.$data.model.review;
 var vueFood = vm.$data.model.foodType;
 
+var lunchBoxApi = "4203b508a2eb71331db0dffecb790d02"
+
+
+    // Here we are building the URL we need to query the database
+    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?" +
+      "q=Austin&units=imperial&appid=" + lunchBoxApi;
+    // var austinId = {"_id":4671654,"name":"Austin","country":"US","coord":{"lon":-97.743057,"lat":30.267151}}
+
+    // Here we run our AJAX call to the OpenWeatherMap API
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+      // We store all of the retrieved data inside of an object called "response"
+      .done(function(response) {
+
+        // Log the queryURL
+        console.log(queryURL);
+
+        // Log the resulting object
+        console.log(response);
+
+        
+        // variables for current weather and the weather in three hours
+        var currentTemp = response.list[3].main.temp;
+        var currentPrecip = response.list[3].weather[0].description;
+        var threeHourTemp = response.list[4].main.temp;
+        var threeHourPrecip = response.list[4].weather[0].description;
+
+         // Transfer content to HTML
+        $("#city").html(response.city.name + " Lunch Time Weather:");
+        $("#current").html("At 10am, it'll be " + Math.floor(currentTemp) + " degrees with " + currentPrecip + ".");
+        $("#threeHR").html("By 1pm, it'll be " + Math.floor(threeHourTemp) + " degress with " + threeHourPrecip + ".");
+
+
+        // console logging the returned weather information from openweathermap
+        console.log(response.city.name);
+        console.log("current weather: " + response.list[0].main.temp);
+        console.log("rain: " + response.list[0].weather[0].description);
+        console.log("3hr forecast: " + response.list[1].main.temp);
+        console.log("rain: " + response.list[1].weather[0].description);
+
+      });
+
