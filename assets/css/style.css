@@ -173,7 +173,7 @@ margin-top: 25px;
 /*border-top: 50px solid black;*/
 /*background-color: #c8bcac !important;*/
 border: 50px solid white;
-
+position: center;
 }
 
 form {
@@ -271,4 +271,17 @@ background-color: black;
 	line-height: 22px;
 	text-align: left;
 	font-weight: normal;
+<<<<<<< HEAD
 }
+=======
+}
+
+#map {
+margin-bottom: 120px;
+border: 20px solid grey;
+margin-top: 200px;
+height:  700px;
+width: 1200px;
+position: center;
+}
+>>>>>>> c68b65af5779ecee920357a3eb6fafb53da35972

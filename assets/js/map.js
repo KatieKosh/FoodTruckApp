@@ -332,11 +332,11 @@
 
 //Stuff I added 3/14
 //Gourdough's Big Fat Donuts
-					var firstFoodTruck = new google.maps.LatLng(30.249512, -97.754808);
+					var firstFoodTruck = new google.maps.LatLng(30.249512, -97.754808);//
 					var secondFoodTruck = new google.maps.LatLng(30.236757, -97.762788); //Gourdough's Big Fat Dounut's
-					var thirdFoodTruck = new google.maps.LatLng(30.315275, -97.716641); //the vegan nom
+					var thirdFoodTruck = new google.maps.LatLng(30.315275, -97.716641); //The Vegan Nom
 					var fourthFoodTruck = new google.maps.LatLng(30.267194, -97.745590); //Surf n turf
-					var fifthFoodTruck = new google.maps.LatLng(30.260685, -97.738358); //Tommy want Wingy
+					var fifthFoodTruck = new google.maps.LatLng(30.260685, -97.738358); //Tommy Want Wingy
 
 					var mapOptions = {
 					  zoom: 15,
@@ -344,13 +344,30 @@
 					}
 					var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+
+
+
 					var marker = new google.maps.Marker({
 					    position: firstFoodTruck,
 					    title:"Hello World!",
 							label: "1"
-					});
+});
 
 
+
+		function addInfoWindowOne(marker, content) {
+    var infoWindow = new google.maps.InfoWindow({
+        content: "Torchy's Tacos"
+
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+        infoWindow.open(map, marker);
+    });
+};
+				addInfoWindowOne(marker);
+
+
+/////////////////////////////////////////////
 					var secondMarker = new google.maps.Marker({
 							position:  secondFoodTruck,
 							 title:"secondFoodTruck",
@@ -365,17 +382,50 @@
 							 label: "3"
 					});
 
+					function addInfoWindowThree(thirdMarker, content) {
+					var infoWindow = new google.maps.InfoWindow({
+							content: "The Vegan Nom"
+
+					});
+					google.maps.event.addListener(thirdMarker, 'click', function() {
+							infoWindow.open(map, thirdMarker);
+					});
+					};
+							addInfoWindowThree(thirdMarker);
+
+
 
 					var fourthMarker = new google.maps.Marker({
 							position:  fourthFoodTruck,
 							 title:"fourthFoodTruck",
 							 label: "4"
 					});
+					function addInfoWindowFour(fourthMarker, content) {
+					var infoWindow = new google.maps.InfoWindow({
+							content: "Surf n Turf"
 
-					var fifthMarker = new google.maps.Marker({
-							position:  fifthFoodTruck,
-							 title:"fifthFoodTruck"
 					});
+					google.maps.event.addListener(fourthMarker, 'click', function() {
+							infoWindow.open(map, fourthMarker);
+					});
+					};
+					addInfoWindowFour(fourthMarker);
+
+						var fifthMarker = new google.maps.Marker({
+							position:  fifthFoodTruck,
+							 title:"fifthFoodTruck",
+							 label: "5"
+						 });
+						 function addInfoWindowFive(fifthMarker, content) {
+						 var infoWindow = new google.maps.InfoWindow({
+						 		content: "Tommy Want Wingy"
+
+						 });
+						 google.maps.event.addListener(fifthMarker, 'click', function() {
+						 		infoWindow.open(map, fifthMarker);
+						 });
+						 };
+						 addInfoWindowFive(fifthMarker);
 
 
 					marker.setMap(map);
@@ -386,4 +436,52 @@
 
 
 
+
+
+///////////////////////////////////////////
+
+									function addInfoWindow(secondMarker, content) {
+
+									var infoWindow = new google.maps.InfoWindow({
+											content: "Gourdough's Big. Fat. Donuts"
+
+									});
+
+									google.maps.event.addListener(secondMarker, 'click', function () {
+											infoWindow.open(map, secondMarker);
+									});
+
+										};
+
+									addInfoWindow(secondMarker);
+
+
+
+					//
+
+
+
+
+
+
 	};//end initMap
+
+
+
+
+
+
+
+
+
+	// $('firstFoodTruck').mouseover(function(event) {
+	//     createTooltip(event);
+	// }).mouseout(function(){
+	//     // create a hidefunction on the callback if you want
+	//     //hideTooltip();
+	// });
+	//
+	// function createTooltip(event){
+	//     $('<div class="tooltip">test</div>').appendTo('body');
+	//     positionTooltip(event);
+	// };
