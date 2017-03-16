@@ -332,11 +332,11 @@
 
 //Stuff I added 3/14
 //Gourdough's Big Fat Donuts
-					var firstFoodTruck = new google.maps.LatLng(30.249512, -97.754808);
+					var firstFoodTruck = new google.maps.LatLng(30.249512, -97.754808);//
 					var secondFoodTruck = new google.maps.LatLng(30.236757, -97.762788); //Gourdough's Big Fat Dounut's
-					var thirdFoodTruck = new google.maps.LatLng(30.315275, -97.716641); //the vegan nom
+					var thirdFoodTruck = new google.maps.LatLng(30.315275, -97.716641); //The Vegan Nom
 					var fourthFoodTruck = new google.maps.LatLng(30.267194, -97.745590); //Surf n turf
-					var fifthFoodTruck = new google.maps.LatLng(30.260685, -97.738358); //Tommy want Wingy
+					var fifthFoodTruck = new google.maps.LatLng(30.260685, -97.738358); //Tommy Want Wingy
 
 					var mapOptions = {
 					  zoom: 15,
@@ -348,7 +348,20 @@
 					    position: firstFoodTruck,
 					    title:"Hello World!",
 							label: "1"
-					});
+});
+
+
+
+							function addInfoWindow(marker, content) {
+    var infoWindow = new google.maps.InfoWindow({
+        content: "Torchy's Tacos"
+
+    });
+    google.maps.event.addListener(marker, 'click', function() {
+        infoWindow.open(map, marker);
+    });
+};
+addInfoWindow(marker);
 
 
 					var secondMarker = new google.maps.Marker({
@@ -365,7 +378,6 @@
 							 label: "3"
 					});
 
-
 					var fourthMarker = new google.maps.Marker({
 							position:  fourthFoodTruck,
 							 title:"fourthFoodTruck",
@@ -374,8 +386,11 @@
 
 					var fifthMarker = new google.maps.Marker({
 							position:  fifthFoodTruck,
-							 title:"fifthFoodTruck"
-					});
+							 title:"fifthFoodTruck",
+							 label: "5"
+						 });
+
+
 
 
 					marker.setMap(map);
@@ -386,4 +401,52 @@
 
 
 
+
+
+///////////////////////////////////////////
+
+									function addInfoWindow(secondMarker, content) {
+
+									var infoWindow = new google.maps.InfoWindow({
+											content: "Gourdough's Big. Fat. Donuts"
+
+									});
+
+									google.maps.event.addListener(secondMarker, 'click', function () {
+											infoWindow.open(map, secondMarker);
+									});
+
+										};
+
+									addInfoWindow(secondMarker);
+
+
+
+					//
+
+
+
+
+
+
 	};//end initMap
+
+
+
+
+
+
+
+
+
+	// $('firstFoodTruck').mouseover(function(event) {
+	//     createTooltip(event);
+	// }).mouseout(function(){
+	//     // create a hidefunction on the callback if you want
+	//     //hideTooltip();
+	// });
+	//
+	// function createTooltip(event){
+	//     $('<div class="tooltip">test</div>').appendTo('body');
+	//     positionTooltip(event);
+	// };
