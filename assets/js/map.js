@@ -337,6 +337,8 @@
 					var thirdFoodTruck = new google.maps.LatLng(30.315275, -97.716641); //The Vegan Nom
 					var fourthFoodTruck = new google.maps.LatLng(30.267194, -97.745590); //Surf n turf
 					var fifthFoodTruck = new google.maps.LatLng(30.260685, -97.738358); //Tommy Want Wingy
+					var sixthFoodTruck = new google.maps.LatLng(30.295504, -97.741759);//Cool Beans
+					var seventhFoodTruck = new google.maps.LatLng(30.264476, -97.728304); //Kebabalicious
 
 					var mapOptions = {
 					  zoom: 15,
@@ -393,7 +395,7 @@
 					};
 							addInfoWindowThree(thirdMarker);
 
-
+////////////////////////////
 
 					var fourthMarker = new google.maps.Marker({
 							position:  fourthFoodTruck,
@@ -426,6 +428,43 @@
 						 });
 						 };
 						 addInfoWindowFive(fifthMarker);
+////////////////////////////////////////////////////////////////////////
+var sixthMarker = new google.maps.Marker({
+		position:  sixthFoodTruck,
+		 title:"sixthFoodTruck",
+		 label: "6"
+});
+
+function addInfoWindowSix(sixthMarker, content) {
+var infoWindow = new google.maps.InfoWindow({
+		content: "Cool Beans"
+
+});
+google.maps.event.addListener(sixthMarker, 'click', function() {
+		infoWindow.open(map, sixthMarker);
+});
+};
+		addInfoWindowSix(sixthMarker);
+
+////////////////////////////////////////////////////////////
+
+var seventhMarker = new google.maps.Marker({
+		position: seventhFoodTruck,
+		 title:"seventhFoodTruck",
+		 label: "7"
+});
+
+function addInfoWindowSeven(seventhMarker, content) {
+var infoWindow = new google.maps.InfoWindow({
+		content: "Kebabalicious<br>address<br>address"
+
+});
+google.maps.event.addListener(seventhMarker, 'click', function() {
+		infoWindow.open(map, seventhMarker);
+});
+};
+		addInfoWindowSeven(seventhMarker);
+
 
 
 					marker.setMap(map);
@@ -433,8 +472,8 @@
 					thirdMarker.setMap(map);
 					fourthMarker.setMap(map);
 					fifthMarker.setMap(map);
-
-
+					sixthMarker.setMap(map);
+					seventhMarker.setMap(map);
 
 
 

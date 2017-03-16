@@ -169,7 +169,7 @@ position: center;
 .jumbotron {
 background-image: url("../../little_pluses/background.png")!important;
 border-radius: 4px;
-margin-top: 25px;
+margin-top: 150px;
 /*border-top: 50px solid black;*/
 /*background-color: #c8bcac !important;*/
 border: 50px solid white;
@@ -242,7 +242,7 @@ background-color: black;
 	border: 10px solid black;
 	margin-bottom: 25px;
 	height: auto;
-	/*background-image: url("../../little_pluses.png");*/
+	background-image: url("little_pluses.png");
 
 }
 
@@ -271,17 +271,37 @@ background-color: black;
 	line-height: 22px;
 	text-align: left;
 	font-weight: normal;
-<<<<<<< HEAD
-}
-=======
+
 }
 
 #map {
 margin-bottom: 120px;
-border: 20px solid grey;
+border: 50px solid grey;
 margin-top: 200px;
 height:  700px;
 width: 1200px;
 position: center;
+
+
 }
->>>>>>> c68b65af5779ecee920357a3eb6fafb53da35972
+
+#weatherBox {
+height: 250px;
+width: 1150px;
+/*background-image: url("../../../image/clouds.jpeg");*/
+background-color: white;
+background-size: cover;
+border: white solid 10px;
+}
+
+.weather {
+margin-top: 37px;
+background-color: white;
+border: 15px solid grey;
+color: grey;
+font-weight:bolder;
+margin-left: 40px;
+margin-right: 40px;
+font-size: 20px;
+padding: 30px;
+}
