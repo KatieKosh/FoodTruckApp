@@ -341,7 +341,7 @@
 					var seventhFoodTruck = new google.maps.LatLng(30.264476, -97.728304); //Kebabalicious
 
 					var mapOptions = {
-					  zoom: 15,
+					  zoom: 12,
 					  center: firstFoodTruck
 					}
 					var map = new google.maps.Map(document.getElementById("map"), mapOptions);

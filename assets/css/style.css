@@ -291,7 +291,7 @@ width: 1150px;
 /*background-image: url("../../../image/clouds.jpeg");*/
 background-color: white;
 background-size: cover;
-border: white solid 10px;
+border: grey solid 10px;
 }
 
 .weather {
