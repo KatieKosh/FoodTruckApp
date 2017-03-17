@@ -359,7 +359,7 @@
 
 		function addInfoWindowOne(marker, content) {
     var infoWindow = new google.maps.InfoWindow({
-        content: "Torchy's Tacos"
+        content: "Torchy's Tacos<br>2809 S 1st St"
 
     });
     google.maps.event.addListener(marker, 'click', function() {
@@ -375,6 +375,20 @@
 							 title:"secondFoodTruck",
 							 label: "2"
 					});
+					function addInfoWindow(secondMarker, content) {
+
+					var infoWindow = new google.maps.InfoWindow({
+							content: "Gourdough's Big. Fat. Donuts<br>1503 S 1st St"
+
+					});
+
+					google.maps.event.addListener(secondMarker, 'click', function () {
+							infoWindow.open(map, secondMarker);
+					});
+
+						};
+
+					addInfoWindow(secondMarker);
 
 					// To add the marker to the map, call setMap();
 
@@ -386,7 +400,7 @@
 
 					function addInfoWindowThree(thirdMarker, content) {
 					var infoWindow = new google.maps.InfoWindow({
-							content: "The Vegan Nom"
+							content: "The Vegan Nom<br>701 E 53rd St"
 
 					});
 					google.maps.event.addListener(thirdMarker, 'click', function() {
@@ -404,7 +418,7 @@
 					});
 					function addInfoWindowFour(fourthMarker, content) {
 					var infoWindow = new google.maps.InfoWindow({
-							content: "Surf n Turf"
+							content: "Surf n Turf<br>407 Lavaca St"
 
 					});
 					google.maps.event.addListener(fourthMarker, 'click', function() {
@@ -420,7 +434,7 @@
 						 });
 						 function addInfoWindowFive(fifthMarker, content) {
 						 var infoWindow = new google.maps.InfoWindow({
-						 		content: "Tommy Want Wingy"
+						 		content: "Tommy Want Wingy<br>94 Rainey St"
 
 						 });
 						 google.maps.event.addListener(fifthMarker, 'click', function() {
@@ -437,7 +451,8 @@ var sixthMarker = new google.maps.Marker({
 
 function addInfoWindowSix(sixthMarker, content) {
 var infoWindow = new google.maps.InfoWindow({
-		content: "Cool Beans"
+		content: "Cool Beans<br>2908 Fruth St"
+
 
 });
 google.maps.event.addListener(sixthMarker, 'click', function() {
@@ -456,7 +471,7 @@ var seventhMarker = new google.maps.Marker({
 
 function addInfoWindowSeven(seventhMarker, content) {
 var infoWindow = new google.maps.InfoWindow({
-		content: "Kebabalicious<br>address<br>address"
+		content: "Kebabalicious<br>1311 E 7th"
 
 });
 google.maps.event.addListener(seventhMarker, 'click', function() {
@@ -479,20 +494,6 @@ google.maps.event.addListener(seventhMarker, 'click', function() {
 
 ///////////////////////////////////////////
 
-									function addInfoWindow(secondMarker, content) {
-
-									var infoWindow = new google.maps.InfoWindow({
-											content: "Gourdough's Big. Fat. Donuts"
-
-									});
-
-									google.maps.event.addListener(secondMarker, 'click', function () {
-											infoWindow.open(map, secondMarker);
-									});
-
-										};
-
-									addInfoWindow(secondMarker);
 
 
 
