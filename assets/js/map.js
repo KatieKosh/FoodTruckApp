@@ -339,7 +339,7 @@
 					var fifthFoodTruck = new google.maps.LatLng(30.260685, -97.738358); //Tommy Want Wingy
 					var sixthFoodTruck = new google.maps.LatLng(30.295504, -97.741759);//Cool Beans
 					var seventhFoodTruck = new google.maps.LatLng(30.264476, -97.728304); //Kebabalicious
-
+					
 					var mapOptions = {
 					  zoom: 12,
 					  center: firstFoodTruck

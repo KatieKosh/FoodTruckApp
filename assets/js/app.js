@@ -15,6 +15,9 @@
   function log(snap) {console.log(snap.val());}
   function error(errObj) {console.log("Errors Handled: " + errObj);}
   database.ref().on("value", log);
+  var resArray = [];
+  var ftArray = [];
+  var ftObj = {};
   database.ref().limitToLast(3).on("child_added", function(snapshot) {
   	if ((snapshot.child("name").exists()) && (snapshot.child("location").exists())) {
   		var ftName = snapshot.val().name;
@@ -46,6 +49,40 @@
 
   		newDiv.append(newName, newLoc, newFood, newReview, parkingHead, newPark);
   		$("#ftAdded").prepend(newDiv);
+    }
+  });
+  database.ref().on("child_added", function(snapshot) {
+    if ((snapshot.child("name").exists()) && (snapshot.child("location").exists())) {
+      var ftName = snapshot.val().name;
+      var location = snapshot.val().location;
+      var MapsKey = "AIzaSyD0CRQGmRk6jLGBMYoFJ32zsL4e07t_leA"
+      var queryMapURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + location + ",+Austin,+TX&key=" + MapsKey;
+      var j = 8;
+      $.ajax({
+        url:queryMapURL,
+        method: "GET"
+      }).done(function(response) {
+        var lat = response.results[0].geometry.location.lat;
+        var lng = response.results[0].geometry.location.lng;
+        var loc = response.results[0].formatted_address;
+        var foodTruck = new google.maps.LatLng(lat, lng);
+        var newMarker = new google.maps.Marker({
+          position: foodTruck,
+          title: ftName,
+          lable: j
+        });
+        function addInfoWindow(newMarker, content) {
+          var InfoWindow = new google.maps.InfoWindow({
+            content: ftName + "<br>" + loc
+          });
+          google.maps.event.addListener(newMarker, 'click', function() {
+            InfoWindow.open(map, newMarker);
+          });
+        };
+        addInfoWindow(newMarker);
+        newMarker.setMap(map);
+        j++;
+      });
   	}
   }, function(err) {
   	console.log("The read failed: " + err.code);
@@ -141,7 +178,7 @@ var vm = new Vue({
 				  var location = vm.$data.model.location;
           var parking = vm.$data.model.parking;
 				 	var foodType = vm.$data.model.foodType;
-				  var review = vm.$data.model.review;
+          var review = vm.$data.model.review;
 
           
           // var nameRef = database.ref("users").orderByChild("time").key;
