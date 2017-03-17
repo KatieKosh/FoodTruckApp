@@ -9,7 +9,7 @@ Utilizing bootstrap to create the UI, we integrated the Google Maps API to creat
 We'd like to make the app more mobile friendly, and integrate the Yelp API to display more information about food trucks and gather more reviews.
 
 # Contributors
-[Kathyrn Koshinski](https://github.com/KatieKosh)
-[Samantha Smith](https://github.com/rumblysam)
-[Jonathan Harris](https://github.com/broklahoman)
-[Eric Pribramsky](https://github.com/epribs)
+* [Kathyrn Koshinski](https://github.com/KatieKosh)
+* [Samantha Smith](https://github.com/rumblysam)
+* [Jonathan Harris](https://github.com/broklahoman)
+* [Eric Pribramsky](https://github.com/epribs)
