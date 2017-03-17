@@ -233,10 +233,11 @@ background-color: #eeeeee;
   background-color: #eeeeee;
 }
 
-#footer {
+footer {
+margin-top: 250px;
 border-top:10px solid black;
 height: 60px;
-background-image: url("../../little_pluses/little_pluses.png");
+background-image: url("../../image/clouds.jpeg");
 font-family: 'Shadows Into Light', cursive;
 background-color: black;
 }
@@ -280,7 +281,7 @@ background-color: black;
 }
 
 #map {
-margin-bottom: 120px;
+margin-bottom: 200px;
 border: 50px solid black;
 margin-top: 20px;
 height:  700px;
@@ -291,14 +292,15 @@ width: 100%;
 }
 
 #hungry {
+/*margin-top: 200px;*/
 font-size: 70px;
 position: center;
 margin-bottom: 20px;
-margin-left: 207px;
+margin-left: 375px;
 }
 
 #boxAroundMap {
-height:  800px;
+height:  1000px;
 width: 1400px;
 border: 10px solid black;
 background-image: url('../../little_pluses/background.png');
@@ -306,19 +308,22 @@ padding-left: 10px;
 padding-right: 10px;
 padding-top: 30px;
 margin-left: -110px;
+margin-top: 200px;
 
 }
 
 #weatherBox {
 height: auto;
-width: 1150px;
+/*width: 1150px;*/
+
 /*background-image: url("../../../image/clouds.jpeg");*/
 /*background-color: white;*/
 background-size: cover;
 border: grey solid 10px;
-margin-bottom: 150px;
+margin-bottom: 200px;
+
 position: center;
-margin-left: 40px;
+margin-left: 20px;
 }
 
 .weather {
@@ -326,6 +331,7 @@ margin-top: 70px;
 margin-bottom: 70px;
 /*background-color: white;*/
 border: 10px solid black;
+border-radius: 15px;
 color: black;
 font-weight:bolder;
 margin-left: 40px;
@@ -333,4 +339,42 @@ margin-right: 40px;
 font-size: 25px;
 padding: 30px;
 background-image: url('../../image/little_pluses.png');
+}
+ #formDirections {
+	color: black;
+	 font-size: 45px;
+	 position: center;
+	 height: 175px;
+	 width: 1000px;
+	 border: 15px solid grey;
+	 background-color: white;
+	margin-bottom: 70px;
+margin-left: 100px;
+text-align: center;
+
+ }
+
+ .panel-body {
+background-image: url('../../image/little_pluses.png');
+
+ }
+
+
+#blackBox  {
+height:  250px;
+width: 1200px;
+background-color: black;
+padding-top: 50px;
+border-top: 20px solid white;
+}
+
+#blackBoxForm {
+	margin-left: 15px;
+	background-color: black;
+	width: 1200px;
+	height: 800px;
+	padding: 50px;
+	border-bottom: 20px solid white;
+
+
 }
