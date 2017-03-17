@@ -14,7 +14,11 @@ fieldset.vue-form-generator *{box-sizing:border-box}fieldset.vue-form-generator 
 	margin: auto 0;
 }
 
-
+h1 {
+text-align: center;
+font-size: 70px;
+font-weight: bold;
+}
 
 
 .border {
@@ -277,32 +281,56 @@ background-color: black;
 
 #map {
 margin-bottom: 120px;
-border: 50px solid grey;
-margin-top: 200px;
+border: 50px solid black;
+margin-top: 20px;
 height:  700px;
-width: 1200px;
+width: 100%;
+/*position: center;*/
+/*margin-left: -33px;*/
+
+}
+
+#hungry {
+font-size: 70px;
 position: center;
-margin-left: -33px;
+margin-bottom: 20px;
+margin-left: 207px;
+}
+
+#boxAroundMap {
+height:  800px;
+width: 1400px;
+border: 10px solid black;
+background-image: url('../../little_pluses/background.png');
+padding-left: 10px;
+padding-right: 10px;
+padding-top: 30px;
+margin-left: -110px;
 
 }
 
 #weatherBox {
-height: 250px;
+height: auto;
 width: 1150px;
 /*background-image: url("../../../image/clouds.jpeg");*/
-background-color: white;
+/*background-color: white;*/
 background-size: cover;
 border: grey solid 10px;
+margin-bottom: 150px;
+position: center;
+margin-left: 40px;
 }
 
 .weather {
-margin-top: 37px;
-background-color: white;
-border: 15px solid grey;
-color: grey;
+margin-top: 70px;
+margin-bottom: 70px;
+/*background-color: white;*/
+border: 10px solid black;
+color: black;
 font-weight:bolder;
 margin-left: 40px;
 margin-right: 40px;
-font-size: 20px;
+font-size: 25px;
 padding: 30px;
+background-image: url('../../image/little_pluses.png');
 }
