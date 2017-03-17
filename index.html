@@ -34,25 +34,12 @@
 		</div>
 	</nav>
 
-  <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div id="weatherBox" style = "background-image: url('image/clouds.jpeg');">
-              <div class="weather">
-      					<span id="city"></span>
-      					<span id="current"></span>
-      					<span id="threeHR"></span>
-      				</div>
-            </div>
-</div>
-</div>
-</div>
 
 
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="jumbotron" style="background-image:url('images/little_pluses.png');">
+				<div class="jumbotron">
 					<div class="border">
 						<div class="text-center">
 						<div id="title">Lunch Box</div>
@@ -70,25 +57,71 @@
 
 
 
-	<div class="row">
-		<div class="col-md-12">
-			<!-- <button onclick="getLocation()">Find My Location</button> -->
-			<div id="map">
-			</div>
-			<div class="text-center">
-			</div>
-		</div>
-	</div>
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <!-- <button onclick="getLocation()">Find My Location</button> -->
+
+
+      <div id = "boxAroundMap">
+
+        <div id = "hungry">
+        Whatcha hungry for??
+        </div>
+        <div class="row">
+
+          <div class="col-md-12">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+      </div>
+
+  </div>
+</div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="weatherBox" style = "background-image: url('image/clouds.jpeg');">
+                  <h1>But What's the Weather Like??</h1>
+              <div class="weather">
+                <span id="city"></span>
+                <span id="current"></span>
+                <span id="threeHR"></span>
+              </div>
+
+  </div>
+  </div>
+  </div>
+
+
+<div class="row">
+  <div class="col-md-12">
+  <div id = blackBox>
+<div id = "formDirections">
+  Did you stumble upon a food truck not listed here??<br><center>Please share!</center>
+</div>
+</div>
+</div>
+</div>
 
 	<div class="row">
-		<div class="col-md-6">
-		  <div id = "newFTadditions" style="background-image:  url("little_pluses.png");">
+  <div id = blackBoxForm>
+		<div class="col-md-5">
+
+		  <div id = "newFTadditions">
 		  	<div class="row">
 					<div id ="ftAdded"></div>
 				</div>
   		</div>
 		</div>
-		<div class="col-md-6">
+    <div class="col-md-2">
+    </div>
+		<div class="col-md-5">
       <div id="addTruck">
         <div class="panel panel-default">
           <div class="panel-heading">Form</div>
@@ -99,62 +132,26 @@
       </div>
      </div>
 	</div>
+</div>
+
+</div>
 
 
 
 
 
-    <!-- <div class="col-md-6">
-
-			<div id="addTruck">
-				<div class="panel panel-default">
-					<div class="panel-heading">Form</div>
-					<div class="panel-body">
-						<vue-form-generator :schema="schema" :model="model"></vue-form-generator>
-					</div>
-				</div>
-			</div> -->
-
-
-			<!-- <form id="addTruck" v-on:submit.prevent="onSubmit">
-				<div class="form-group">
-					<p>If you've found a Food Truck to recommend in Austin, please share. Spread the Love!</p>
-
-					<label for="name">Name of the Food Truck</label>
-					<input v-model="name" placeholder="Food Truck Name" id="ftName" class="form-control">
-				</div>
-				<div class="form-group">
-					<label for="location">Location including street name and number.</label>
-					<input v-model="loc" placeholder="123 S Congress Ave Austin, TX" id="location" class="form-control">
-				</div>
-
-				<div class="form-group">
-					<label for="exampleTextarea">Your Review?</label>
-					<textarea v-model="review" id="review" placeholder="Add your review" class="form-control" rows="3"></textarea>
-				</div>
-				<div id="foodType" class="radio">
-						<input type="radio" id="one" value="Tacos" v-model="picked">
-						<label for="one">Tacos</label>
-						<br>
-						<input type="radio" id="two" value="Burgers" v-model="picked">
-						<label for="two">Burgers</label>
-						<br>
-						<input type="radio" id="three" value="Cupcakes" v-model="picked">
-						<label for="three">Cupcakes</label>
-						<br>
-						<input type="radio" id="four" value="Other" v-model="picked">
-						<label for="four">Other</label>
-				</div>
-				<button type="submit" class="btn btn-lg btn-primary" v-on:click="submit">Submit</button>
-
-			</form> -->
-	</div>
+  <!-- <div class="row">
+      <div class="col-md-12">
+          <div id="footer">
+          </div>
+      </div>
+  </div> -->
 
 <footer>
 
 	<!-- Must have code for food truck icon-->
 	Icons made by <a href="http://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
-</div>
+
 </footer>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 

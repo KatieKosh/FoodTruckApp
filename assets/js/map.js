@@ -332,19 +332,20 @@
 
 //Stuff I added 3/14
 //Gourdough's Big Fat Donuts
-					var firstFoodTruck = new google.maps.LatLng(30.249512, -97.754808);//
-					var secondFoodTruck = new google.maps.LatLng(30.236757, -97.762788); //Gourdough's Big Fat Dounut's
-					var thirdFoodTruck = new google.maps.LatLng(30.315275, -97.716641); //The Vegan Nom
-					var fourthFoodTruck = new google.maps.LatLng(30.267194, -97.745590); //Surf n turf
-					var fifthFoodTruck = new google.maps.LatLng(30.260685, -97.738358); //Tommy Want Wingy
-					var sixthFoodTruck = new google.maps.LatLng(30.295504, -97.741759);//Cool Beans
-					var seventhFoodTruck = new google.maps.LatLng(30.264476, -97.728304); //Kebabalicious
-					
-					var mapOptions = {
-					  zoom: 12,
-					  center: firstFoodTruck
+
+			var firstFoodTruck = new google.maps.LatLng(30.249512, -97.754808);//
+			var secondFoodTruck = new google.maps.LatLng(30.236757, -97.762788); //Gourdough's Big Fat Dounut's
+			var thirdFoodTruck = new google.maps.LatLng(30.315275, -97.716641); //The Vegan Nom
+			var fourthFoodTruck = new google.maps.LatLng(30.267194, -97.745590); //Surf n turf
+			var fifthFoodTruck = new google.maps.LatLng(30.260685, -97.738358); //Tommy Want Wingy
+			var sixthFoodTruck = new google.maps.LatLng(30.295504, -97.741759);//Cool Beans
+			var seventhFoodTruck = new google.maps.LatLng(30.264476, -97.728304); //Kebabalicious
+
+				var mapOptions = {
+					zoom: 12,
+					center: firstFoodTruck
 					}
-					var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
 
 
@@ -353,19 +354,21 @@
 					    position: firstFoodTruck,
 					    title:"Hello World!",
 							label: "1"
-});
+					});
 
 
 
 		function addInfoWindowOne(marker, content) {
-    var infoWindow = new google.maps.InfoWindow({
-        content: "Torchy's Tacos<br>2809 S 1st St"
+    		var infoWindow = new google.maps.InfoWindow ({
+        	content: "Torchy's Tacos<br>2809 S 1st St"
 
-    });
-    google.maps.event.addListener(marker, 'click', function() {
+    	});
+    	
+    	google.maps.event.addListener(marker, 'click', function() {
         infoWindow.open(map, marker);
-    });
-};
+    	});
+		
+			};
 				addInfoWindowOne(marker);
 
 
@@ -377,70 +380,68 @@
 					});
 					function addInfoWindow(secondMarker, content) {
 
-					var infoWindow = new google.maps.InfoWindow({
-							content: "Gourdough's Big. Fat. Donuts<br>1503 S 1st St"
+						var infoWindow = new google.maps.InfoWindow({
+						content: "Gourdough's Big. Fat. Donuts<br>1503 S 1st St"
 
-					});
+						});
 
-					google.maps.event.addListener(secondMarker, 'click', function () {
+						google.maps.event.addListener(secondMarker, 'click', function () {
 							infoWindow.open(map, secondMarker);
-					});
+						});
 
 						};
 
-					addInfoWindow(secondMarker);
+						addInfoWindow(secondMarker);
 
 					// To add the marker to the map, call setMap();
 
 					var thirdMarker = new google.maps.Marker({
-							position:  thirdFoodTruck,
-							 title:"thirdFoodTruck",
-							 label: "3"
+						position:  thirdFoodTruck,
+						title:"thirdFoodTruck",
+						label: "3"
 					});
 
 					function addInfoWindowThree(thirdMarker, content) {
-					var infoWindow = new google.maps.InfoWindow({
-							content: "The Vegan Nom<br>701 E 53rd St"
-
-					});
-					google.maps.event.addListener(thirdMarker, 'click', function() {
+						var infoWindow = new google.maps.InfoWindow({
+						content: "The Vegan Nom<br>701 E 53rd St"
+						});
+						google.maps.event.addListener(thirdMarker, 'click', function() {
 							infoWindow.open(map, thirdMarker);
-					});
+						});
 					};
 							addInfoWindowThree(thirdMarker);
 
 ////////////////////////////
 
 					var fourthMarker = new google.maps.Marker({
-							position:  fourthFoodTruck,
-							 title:"fourthFoodTruck",
-							 label: "4"
+						position:  fourthFoodTruck,
+						title:"fourthFoodTruck",
+						label: "4"
 					});
-					function addInfoWindowFour(fourthMarker, content) {
-					var infoWindow = new google.maps.InfoWindow({
-							content: "Surf n Turf<br>407 Lavaca St"
 
-					});
-					google.maps.event.addListener(fourthMarker, 'click', function() {
+					function addInfoWindowFour(fourthMarker, content) {
+						var infoWindow = new google.maps.InfoWindow({
+							content: "Surf n Turf<br>407 Lavaca St"
+							});
+							google.maps.event.addListener(fourthMarker, 'click', function() {
 							infoWindow.open(map, fourthMarker);
-					});
+							});
 					};
-					addInfoWindowFour(fourthMarker);
+						addInfoWindowFour(fourthMarker);
 
 						var fifthMarker = new google.maps.Marker({
 							position:  fifthFoodTruck,
-							 title:"fifthFoodTruck",
-							 label: "5"
-						 });
-						 function addInfoWindowFive(fifthMarker, content) {
-						 var infoWindow = new google.maps.InfoWindow({
-						 		content: "Tommy Want Wingy<br>94 Rainey St"
-
-						 });
-						 google.maps.event.addListener(fifthMarker, 'click', function() {
-						 		infoWindow.open(map, fifthMarker);
-						 });
-						 };
+							title:"fifthFoodTruck",
+							label: "5"
+							});
+					function addInfoWindowFive(fifthMarker, content) {
+						var infoWindow = new google.maps.InfoWindow({
+							content: "Tommy Want Wingy<br>94 Rainey St"
+							});
+							google.maps.event.addListener(fifthMarker, 'click', function() {
+							infoWindow.open(map, fifthMarker);
+							});
+					};
 						 addInfoWindowFive(fifthMarker);
 ////////////////////////////////////////////////////////////////////////
 var sixthMarker = new google.maps.Marker({
