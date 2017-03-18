@@ -1,69 +1,164 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Welcome to Firebase Hosting</title>
-    <style media="screen">
-      body {
-        font-family: Roboto, Arial, sans-serif;
-        background: #ECEFF1;
-        color: rgba(0,0,0,0.87);
-      }
+<html lang="en-US">
+<head>
 
-      a {
-        color: rgb(3,155,229);
-      }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../assets/js/vue-form-generator/dist/vfg-core.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.js">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <script type="text/javascript" src="../assets/js/vue-form-generator/dist/vfg-core.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  
+</head>
 
-      #message {
-        max-width: 400px;
-        margin: 40px auto;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
-        border-radius: 2px;
-        background: white;
-        padding: 16px 24px;
-      }
-
-      #message h1 {
-        font-size: 22px;
-        font-weight: 500;
-        text-align: center;
-        margin: 0 0 16px;
-      }
-
-      #message p {
-        font-weight: 300;
-        line-height: 150%;
-      }
-
-      #message ul {
-        list-style: none;
-        margin: 16px 0 0;
-        padding: 0;
-        text-align: center;
-      }
-
-      #message li a {
-        display: inline-block;
-        padding: 8px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 500;
-        background: rgb(3,155,229);
-        color: white;
-        border: 1px solid rgb(3,155,229);
-        border-radius: 3px;
-        font-size: 14px;
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h1>Welcome to Firebase Hosting</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <ul>
-        <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a></li>
-      </ul>
+<body>
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <div class="navbar">
+        <!-- <div class="weather">
+          <span id="city"></span>
+          <span id="current"></span>
+          <span id="threeHR"></span>
+        </div> -->
+      </div>
     </div>
-  </body>
+  </nav>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="jumbotron">
+          <div class="border">
+            <div class="text-center">
+            <div id="title">Lunch Box</div>
+            <h4>(Supporting Local Business!)
+            <h2>Find Yo-Self A Food Truck!!</h2>
+            <h2>Austin, Texas</h2>
+            <img src="../image/vintagePic.jpeg" style="height: 300px; width: 500px; border-radius: 10px; margin-top:25px; margin-bottom:25px; border: 5px solid black;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <!-- <button onclick="getLocation()">Find My Location</button> -->
+
+
+      <div id = "boxAroundMap">
+
+        <div id = "hungry">
+        Whatcha hungry for??
+        </div>
+        <div class="row">
+
+          <div class="col-md-12">
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+      </div>
+
+  </div>
+</div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div id="weatherBox" style = "background-image: url('../image/clouds.jpeg');">
+                  <h1>But What's the Weather Like??</h1>
+              <div class="weather">
+                <span id="city"></span>
+                <span id="current"></span>
+                <span id="threeHR"></span>
+              </div>
+
+  </div>
+  </div>
+  </div>
+
+
+<div class="row">
+  <div class="col-md-12">
+  <div id = blackBox>
+<div id = "formDirections">
+  Did you stumble upon a food truck not listed here??<br><center>Please share!</center>
+</div>
+</div>
+</div>
+</div>
+
+  <div class="row">
+  <div id = blackBoxForm>
+    <div class="col-md-5">
+
+      <div id = "newFTadditions">
+        <div class="row">
+          <div id ="ftAdded"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-5">
+      <div id="addTruck">
+        <div class="panel panel-default">
+          <div class="panel-heading">Add Your Truck</div>
+          <div class="panel-body">
+            <vue-form-generator :schema="schema" :model="model"></vue-form-generator>
+          </div>
+        </div>
+      </div>
+     </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+  <!-- <div class="row">
+      <div class="col-md-12">
+          <div id="footer">
+          </div>
+      </div>
+  </div> -->
+
+<footer>
+
+  <!-- Must have code for food truck icon-->
+  Icons made by <a href="http://www.flaticon.com/authors/nikita-golubev" title="Nikita Golubev">Nikita Golubev</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+
+</footer>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script async defer
+     src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCVNNE9FZK9fjTgF7DMV1PHjKPwQEt0LxU&callback=initMap">
+</script>
+<script type="text/javascript" src="../assets/js/map.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+
 </html>
